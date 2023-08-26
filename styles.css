@@ -1,0 +1,82 @@
+body {
+    margin: 0px;
+    background-color: #6802D1;
+}
+
+#content {
+    width: 325px;
+    height: 326px;
+    overflow: hidden;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#main-container{
+    position: relative;
+    width: 325px;
+    height: 100vh;
+    margin: auto;
+}
+
+svg path {
+    stroke-dashoffset: 210;
+    stroke-dasharray: 200;
+    stroke: white;
+    stroke-width: 6px;
+    fill: white;
+    animation: draw 3s forwards,
+               hide-stroke 2s 3s forwards,
+               re-draw 3s 7s forwards,
+               show-stroke 0.1s 7s forwards;
+}
+
+svg g {
+    fill-opacity: 0;
+    animation: fill-in 2s 3s forwards,
+               fill-out 2s 7s forwards;
+}
+
+svg {
+    transform: scale(2);
+    margin-left: -292px;
+    margin-top: -195px;
+}
+
+@keyframes draw {
+    to {
+        stroke-dasharray: 3000;
+    }
+}
+
+@keyframes re-draw {
+    to {
+        stroke-dasharray: 200;
+    }
+}
+
+@keyframes fill-in {
+    to {
+        fill-opacity: 1;
+    }
+}
+
+@keyframes fill-out {
+    to {
+        fill-opacity: 0;
+    }
+}
+
+@keyframes hide-stroke {
+    to {
+        stroke-width: 1px;
+    }
+}
+
+@keyframes show-stroke {
+    to {
+        stroke-width: 6px;
+    }
+}
